@@ -36,14 +36,15 @@ public class LogParser {
     public static void main(String[] args) throws Exception {
         String xml =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                        "<log>\n" +
-                        "    <entry id=\"1\">\n" +
-                        "        <message>Application started</message>\n" +
-                        "    </entry>\n" +
-                        "    <entry id=\"2\">\n" +
-                        "        <message>Application ended</message>\n" +
-                        "    </entry>\n" +
-                        "</log>";
+                "<log>\n" +
+                "    <entry id=\"1\">\n" +
+                "        <message>Application started</message>\n" +
+                "    </entry>\n" +
+                "    <entry id=\"2\">\n" +
+                "        <message>Application ended</message>\n" +
+                "    </entry>\n" +
+                "</log>"
+        ;
 
         Collection<Integer> ids = getIdsByMessage(xml, "Application ended");
         for(int id: ids)

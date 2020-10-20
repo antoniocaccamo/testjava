@@ -24,18 +24,17 @@ public class ChainLink {
     public Side longerSide() {
 
         int leftSideCount  = left  == null ? 0 : chainLinkSideCounter(this, this, Side.LEFT);
-        int rightSideCount = right == null ? 0 : chainLinkSideCounter(this, this, Side.RIGHT)
-        ;
+        int rightSideCount = right == null ? 0 : chainLinkSideCounter(this, this, Side.RIGHT);
 
         logger.info(String.format("%d %d", leftSideCount, rightSideCount));
 
-        if ( leftSideCount < 0 || rightSideCount < 0)
+        if ( leftSideCount < 0 || rightSideCount < 0 )
             return Side.NONE;
 
         if ( leftSideCount < rightSideCount )
             return Side.RIGHT;
 
-        if ( rightSideCount < leftSideCount)
+        if ( rightSideCount < leftSideCount )
             return Side.LEFT;
 
 
@@ -72,9 +71,9 @@ public class ChainLink {
     }
 
     public static void main(String[] args) {
-        ChainLink left = new ChainLink();
+        ChainLink   left = new ChainLink();
         ChainLink middle = new ChainLink();
-        ChainLink right = new ChainLink();
+        ChainLink  right = new ChainLink();
         left.append(middle);
         middle.append(right);
         //
